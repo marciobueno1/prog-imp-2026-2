@@ -11,16 +11,16 @@ public class Exemplo02_Vetor {
         preencherVetorDigitacao(va);
         System.out.println("====== Preenchimento do Vetor B ======");
         preencherVetorDigitacao(vb);
-        System.out.println("\n====== Impressão do Vetor A ======");
+        System.out.print("\nA = ");
         imprimirVetor(va);
-        System.out.println("\n\n====== Impressão do Vetor B ======");
+        System.out.print("B = ");
         imprimirVetor(vb);
         posMaiorA = posMaiorValor(va);
-        System.out.printf("\n\n%d é o maior valor do vetor A e está na %da posição",
-            posMaiorA + 1);
-        posMaiorB = posMaiorValor(va);
-        System.out.printf("\n\n%d é o maior valor do vetor B e está na %da posição",
-            posMaiorB  + 1);
+        System.out.printf("\n\n%d é o maior valor do vetor A e está na %da posição\n",
+            va[posMaiorA], posMaiorA + 1);
+        posMaiorB = posMaiorValor(vb);
+        System.out.printf("%d é o maior valor do vetor B e está na %da posição\n",
+            vb[posMaiorB], posMaiorB  + 1);
 
     }
 
@@ -32,9 +32,14 @@ public class Exemplo02_Vetor {
     }
 
     public static void imprimirVetor(int[] v) {
-        for (int i = 0; i < v.length; i += 1) {
-            System.out.print(v[i] + " ");
+        System.out.print("{");
+        if (v.length > 0) {
+            System.out.printf(" %2d", v[0]);
+            for (int i = 1; i < v.length; i += 1) {
+                System.out.printf(", %2d", v[i]);
+            }
         }
+        System.out.println(" }");
     }
 
     public static int posMaiorValor(int[] v) {
