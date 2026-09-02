@@ -12,6 +12,7 @@ public class Exemplo03_Vetor {
     public static void preencherVetorAleatorio(double[] v) {
         for (int i = 0; i < v.length; i += 1) {
             inserirOrdenado(v, i, random.nextDouble(100.0));
+            imprimirVetor(v, i + 1);
         }
     }
 
@@ -35,4 +36,17 @@ public class Exemplo03_Vetor {
         System.out.println(" }");
     }
 
+    // só pode ser utilizada se o vetor estiver ordenado
+    public static int buscaMelhorada(double[] v, int n, int x) {
+        int i;
+        for (i = 0; i < n; i += 1) {
+            if (v[i] >= x) {
+                break;
+            }
+        }
+        if (i < n && v[i] == x) {
+            return i;
+        }
+        return -1;
+    }
 }
