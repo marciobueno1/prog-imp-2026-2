@@ -43,6 +43,25 @@ public class Exemplo04_Vetor_Ordenacao {
         }
     }
 
+    public static void bubbleSort(double[] v, int n) {
+        double aux;
+        int fim = n - 2, pos = n - 2;
+        boolean trocou = true;
+        while (trocou) {
+            trocou = false;
+            for (int i = 0; i <= fim; i += 1) {
+                if (v[i] > v[i + 1]) {
+                    aux = v[i];
+                    v[i] = v[i + 1];
+                    v[i + 1] = aux;
+                    trocou = true;
+                    pos = i;
+                }
+            }
+            fim = pos - 1;
+        }
+    }
+
     public static void preencherVetorAleatorio(double[] v) {
         for (int i = 0; i < v.length; i += 1) {
             v[i] = random.nextDouble(100.0);
